@@ -2,20 +2,11 @@ include(FetchContent)
 
 find_package(OpenCV REQUIRED core imgcodecs imgproc)
 
+set(PUGIXML_HEADER_ONLY ON CACHE BOOL "")
 set(TLCT_HEADER_ONLY ON CACHE BOOL "")
-FetchContent_Declare(
-        tlct
-        GIT_REPOSITORY "https://github.com/SIGS-TZ/TLCT.git"
-        GIT_TAG v0.10.2
-)
-FetchContent_MakeAvailable(tlct)
-
-FetchContent_Declare(
-        argparse
-        GIT_REPOSITORY "https://github.com/p-ranav/argparse.git"
-        GIT_TAG v3.0
-)
-FetchContent_MakeAvailable(argparse)
+set(TLCT_PUGIXML_PATH "${PROJECT_SOURCE_DIR}/thirdparty/pugixml-1.14")
+add_subdirectory(thirdparty/TLCT-0.10.2)
+add_subdirectory(thirdparty/argparse-3.0)
 
 if (MCA_BUILD_TESTS)
     FetchContent_Declare(
