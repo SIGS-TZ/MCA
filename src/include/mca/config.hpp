@@ -10,7 +10,7 @@
 #include "tlct/config.hpp"
 #include "tlct/config/common.hpp"
 
-namespace mca::cfg {
+namespace mca::_cfg {
 
 namespace fs = std::filesystem;
 namespace tcfg = tlct::cfg;
@@ -95,5 +95,13 @@ fs::path ParamConfig<TCalibConfig_>::fmtDstPath(const ParamConfig<TCalibConfig_>
 
 template class ParamConfig<tcfg::tspc::CalibConfig>;
 template class ParamConfig<tcfg::raytrix::CalibConfig>;
+
+} // namespace mca::_cfg
+
+namespace mca::cfg {
+
+namespace _priv = mca::_cfg;
+
+using _priv::ParamConfig;
 
 } // namespace mca::cfg
