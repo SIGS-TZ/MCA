@@ -2,7 +2,6 @@
 #include <opencv2/imgcodecs.hpp>
 #include <tlct.hpp>
 
-#include "mca/config.hpp"
 #include "mca/impl/debug.hpp"
 
 namespace tn = tlct::tspc;
