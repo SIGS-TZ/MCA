@@ -1,9 +1,7 @@
 include(FetchContent)
 
-find_package(OpenCV REQUIRED core imgcodecs imgproc)
-
 set(TLCT_PUGIXML_PATH "${PROJECT_SOURCE_DIR}/thirdparty/pugixml-1.14")
-add_subdirectory(thirdparty/TLCT-0.13.0)
+add_subdirectory(thirdparty/TLCT-0.13.1)
 add_subdirectory(thirdparty/argparse-3.0)
 
 if (MCA_BUILD_TESTS)
