@@ -4,7 +4,9 @@
 
 namespace mca::_proc {
 
-using tlct::_cvt::getRoiImageByCenter;
-using tlct::_cvt::getRoiImageByLeftupCorner;
+namespace _priv = tlct::_cvt;
+
+using _priv::getRoiImageByCenter;
+using _priv::getRoiImageByLeftupCorner;
 
 } // namespace mca::_proc
