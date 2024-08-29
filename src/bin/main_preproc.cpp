@@ -10,8 +10,6 @@
 namespace fs = std::filesystem;
 namespace tcpt = tlct::cfg::concepts;
 
-using tlct::_cfg::ParamConfig_;
-
 template <typename TParamConfig, typename TLayout>
     requires tcpt::CSpecificConfig<typename TParamConfig::TSpecificConfig> &&
              tcpt::CCalibConfig<typename TParamConfig::TCalibConfig> && tcpt::CLayout<TLayout>
@@ -60,11 +58,9 @@ int main(int argc, char* argv[])
 
     if (cfg_map.getPipelineType() == tlct::PipelineType::RLC) {
         namespace tn = tlct::raytrix;
-        using ParamConfig = ParamConfig_<tn::SpecificConfig, tn::CalibConfig>;
-        mainProc<ParamConfig, tn::Layout>(cfg_map);
+        mainProc<tn::ParamConfig, tn::Layout>(cfg_map);
     } else {
         namespace tn = tlct::tspc;
-        using ParamConfig = ParamConfig_<tn::SpecificConfig, tn::CalibConfig>;
-        mainProc<ParamConfig, tn::Layout>(cfg_map);
+        mainProc<tn::ParamConfig, tn::Layout>(cfg_map);
     }
 }

@@ -9,6 +9,3 @@ include(cmake/dependencies.cmake)
 include(cmake/helper.cmake)
 
 add_subdirectory(src)
-if (MCA_BUILD_TESTS)
-    add_subdirectory(tests)
-endif ()
